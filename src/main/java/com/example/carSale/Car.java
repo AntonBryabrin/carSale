@@ -11,10 +11,20 @@ public class Car {
         return "Car ready in " + redColourCarConfiguration.makeConfiguration();
     }*/
 
-    private Configurable configuration;
+    /*private Configurable configuration;
     public String readyForSale(){
         //configuration = new RedColourCarConfiguration();
         configuration = new GrayColourCarConfiguration();
+        return "Car ready in " + configuration.makeConfiguration();
+    }*/
+
+    private Configurable configuration;
+
+    public Car(Configurable configuration) {
+        this.configuration = configuration;
+    }
+
+    public String readyForSale() {
         return "Car ready in " + configuration.makeConfiguration();
     }
 
