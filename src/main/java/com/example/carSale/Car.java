@@ -1,16 +1,21 @@
 package com.example.carSale;
 
 public class Car {
-  //  private YellowCarConfiguration yellowCarConfiguration;
-    private GreenCarConfiguration greenCarConfiguration;
+/*  //  private YellowCarConfiguration yellowCarConfiguration;
+    private RedColourCarConfiguration redColourCarConfiguration;
 
     public String readyForSale(){
-//        yellowCarConfiguration = new YellowCarConfiguration();
-        greenCarConfiguration = new GreenCarConfiguration();
-      //  return "Car ready in " + yellowCarConfiguration.makeConfiguration();
-        return "Car ready in " + greenCarConfiguration.makeConfiguration();
+//        grayCarConfiguration = new GrayColourCarConfiguration();
+        redColourCarConfiguration = new RedColourCarConfiguration();
+      //  return "Car ready in " + grayCarConfiguration.makeConfiguration();
+        return "Car ready in " + redColourCarConfiguration.makeConfiguration();
+    }*/
+
+    private Configurable configuration;
+    public String readyForSale(){
+        //configuration = new RedColourCarConfiguration();
+        configuration = new GrayColourCarConfiguration();
+        return "Car ready in " + configuration.makeConfiguration();
     }
-
-
 
 }
