@@ -2,6 +2,7 @@ package com.example.carSale;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 @SpringBootApplication
 public class CarSaleApplication {
@@ -9,17 +10,18 @@ public class CarSaleApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(CarSaleApplication.class, args);
 
-		Car carForFamily = new Car(new GrayColourCarConfiguration());
-		System.out.println(carForFamily.readyForSale());
+		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
 
-		Car carForMen = new Car(new BlackColourCarConfiguration());
-		System.out.println(carForMen.readyForSale());
+		Car newCarForFamily = context.getBean("familyCar", Car.class );
+		Car newCarForMen = context.getBean("menCar", Car.class);
+		Car newCarForTeen = context.getBean("teenCar", Car.class);
+		Car newCarForGirl = context.getBean("girlCar", Car.class);
 
-		Car carForGirl = new Car(new PinkColourCarConfiguration());
-		System.out.println(carForGirl.readyForSale());
+		System.out.println(newCarForFamily.readyForSale());
+		System.out.println(newCarForMen.readyForSale());
+		System.out.println(newCarForTeen.readyForSale());
+		System.out.println(newCarForGirl.readyForSale());
 
-		Car carForTeen = new Car(new RedColourCarConfiguration());
-		System.out.println(carForTeen.readyForSale());
 
 
 	}
