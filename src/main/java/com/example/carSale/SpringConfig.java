@@ -30,12 +30,6 @@ public class SpringConfig {
     }
 
 
-
-
-
-
-
-
     @Bean
     public Car menCar(){
         return new Car(blackColourCarConfiguration());
